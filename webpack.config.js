@@ -63,8 +63,8 @@ if (isDev) {
   })
   config.devtool = '#cheap-module-eval-source-map'
   config.devServer = {
-    port: 8000,
-    host: '0.0.0.0',
+    port: 2002,
+    host: 'localhost',
     overlay: {
       errors: true,
     },
