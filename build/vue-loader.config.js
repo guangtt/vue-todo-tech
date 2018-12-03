@@ -5,8 +5,8 @@ module.exports = (isDev) => {
         extractCSS: !isDev, //把在vue中的css单独打包,在开发环境中不需要。
         //对vue文件中的css部分进行配置
         cssModules: {
-            localIdentName: '[path]-[name]-[hash:5]',
-            camelCase: true, //把css的类名变为驼峰型
+            localIdentName: isDev ? '[path]-[name]-[hash:base64:5]' : '[hash:base64:5]', //开发环境下的css类名简单些
+            camelCase: true, //把css的类名变为驼峰型,方便在template模板中作为属性调用。
         },
         //hotReload: false //根据环境变量生成
         loaders: {

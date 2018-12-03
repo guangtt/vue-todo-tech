@@ -13,6 +13,13 @@ const config = {
     },
     module: {
         rules: [
+            // 编译前先检查eslint格式
+            // {
+            //     test: /\.(vue|js|jsx)$/,
+            //     loader: 'eslint-loader',
+            //     exclude: /node_modules/,
+            //     enforce: 'pre'
+            // },
             {
                 test: /\.vue$/,
                 loader: 'vue-loader',
