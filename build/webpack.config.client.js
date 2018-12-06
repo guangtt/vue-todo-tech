@@ -1,7 +1,7 @@
 /*webpack根据是否是开发环境来配置*/
 
 const path = require('path')
-const HTMLPlugin = require('html-webpack-plugin')
+const HTMLPlugin = require('html-webpack-plugin'); //打包出一个html文件，使得整个项目有个html入口
 const webpack = require('webpack')
 const merge = require('webpack-merge'); //把两个webpack配置文件融合
 const ExtractPlugin = require('extract-text-webpack-plugin')
@@ -16,6 +16,9 @@ const devServer = {
     overlay: {
         errors: true,
     },
+    historyApiFallback: { // history模式下的url会请求到服务器端，但是服务器端并没有这一个资源文件，就会返回404，所以需要配置这一项
+        index: '/index.html' //与output的publicPath有关(HTMLplugin生成的html默认为index.html)
+    },
     hot: true
 };
 const defaultPluins = [
@@ -24,7 +27,9 @@ const defaultPluins = [
             NODE_ENV: isDev ? '"development"' : '"production"'
         }
     }),
-    new HTMLPlugin()
+    new HTMLPlugin({
+        template: path.join(__dirname, 'template.html') //为生成的html文件设置模板
+    })
 ];
 
 if (isDev) {
