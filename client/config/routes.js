@@ -19,6 +19,7 @@ export default [
             // console.log('beforeEnter app');
             next();
         },
+        component: () => import('../views/todo/todo.vue'), // 需要用到这个组件的时候再加载，需要babel插件
         children: [
             {
                 path: 'test',
