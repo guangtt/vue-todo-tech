@@ -2,6 +2,8 @@
     <div id="app">
         <div id="cover"></div>
         <Header></Header>
+        <p>{{counter}}</p>
+        <p>{{fullName}}</p>
         <router-link to="/app">app</router-link>
         <router-link to="/app/test">app/test</router-link>
         <router-link to="/login">login</router-link>
@@ -20,7 +22,12 @@
     import Footer from './layout/footer.jsx'
     import Todo from './views/todo/todo.vue'
 
-    console.log(Header.__docs);
+    import {
+        mapState,
+        mapGetters,
+        mapActions,
+        mapMutations
+    } from 'vuex'
 
     export default {
         components: {
@@ -28,9 +35,23 @@
             Footer,
             Todo,
         },
-        // mounted() {
-        //     console.log(this.$route);
-        // }
+        mounted() {
+            // console.log(this.$store);
+            this.updateCountASync({
+                number: 5,
+                time: 1000
+            })
+        },
+        computed: {
+            ...mapState({
+                counter: 'count'
+            }),
+            ...mapGetters(['fullName'])
+        },
+        methods: {
+            ...mapActions(['updateCountASync']),
+            ...mapMutations(['updateCount'])
+        }
     }
 </script>
 
