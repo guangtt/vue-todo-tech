@@ -6,11 +6,15 @@ import Vuex from 'vuex'
 import './assets/styles/global.styl'
 import createRouter from './config/router'
 import createStore from './store/store'
+// 引入全局注册notification的index.js，就可以在全局使用
+import Notification from './components/notification/index'
+Vue.use(Notification);
 
 Vue.use(Vuex);
 Vue.use(VueRouter); //让全局都能用到VueRouter
 var router = createRouter();
 var store = createStore();
+
 
 // 监测第一个方法改变的值，返回给第二个方法
 // store.watch((state) => {

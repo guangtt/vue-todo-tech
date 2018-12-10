@@ -2,11 +2,12 @@
     <div id="app">
         <div id="cover"></div>
         <Header></Header>
-        <p>{{counter}}</p>
-        <p>{{fullName}}</p>
-        <router-link to="/app">app</router-link>
-        <router-link to="/app/test">app/test</router-link>
-        <router-link to="/login">login</router-link>
+        <button @click="notify">just</button>
+        <!--<p>{{counter}}</p>-->
+        <!--<p>{{fullName}}</p>-->
+        <!--<router-link to="/app">app</router-link>-->
+        <!--<router-link to="/app/test">app/test</router-link>-->
+        <!--<router-link to="/login">login</router-link>-->
         <!--<router-link to="/login/exact">login exact</router-link>-->
         <!--<todo></todo>-->
         <transition name="fade">
@@ -21,6 +22,7 @@
     import Header from './layout/header.vue'
     import Footer from './layout/footer.jsx'
     import Todo from './views/todo/todo.vue'
+    // import Notification from './components/notification/notification.vue'
 
     import {
         mapState,
@@ -30,6 +32,11 @@
     } from 'vuex'
 
     export default {
+        data() {
+            return {
+                num: 0
+            }
+        },
         components: {
             Header,
             Footer,
@@ -40,7 +47,7 @@
             this.updateCountASync({
                 number: 5,
                 time: 1000
-            })
+            });
         },
         computed: {
             ...mapState({
@@ -50,7 +57,13 @@
         },
         methods: {
             ...mapActions(['updateCountASync']),
-            ...mapMutations(['updateCount'])
+            ...mapMutations(['updateCount']),
+            notify() {
+                this.$notify({
+                    content: 'hello justin',
+                    btn: ++this.num + 'close'
+                })
+            }
         }
     }
 </script>
