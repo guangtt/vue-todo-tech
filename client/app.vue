@@ -2,7 +2,6 @@
     <div id="app">
         <div id="cover"></div>
         <Header></Header>
-        <button @click="notify">just</button>
         <!--<p>{{counter}}</p>-->
         <!--<p>{{fullName}}</p>-->
         <!--<router-link to="/app">app</router-link>-->
@@ -48,6 +47,10 @@
                 number: 5,
                 time: 1000
             });
+            // this.$notify({
+            //     content: 'hello world',
+            //     btn: 'close'
+            // })
         },
         computed: {
             ...mapState({
@@ -57,13 +60,7 @@
         },
         methods: {
             ...mapActions(['updateCountASync']),
-            ...mapMutations(['updateCount']),
-            notify() {
-                this.$notify({
-                    content: 'hello justin',
-                    btn: ++this.num + 'close'
-                })
-            }
+            ...mapMutations(['updateCount'])
         }
     }
 </script>

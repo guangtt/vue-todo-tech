@@ -17,6 +17,7 @@ export default () => {
         // }
         // ]
     });
+    //设置模块热更新
     if(module.hot){
         module.hot.accept([
             './state/state',

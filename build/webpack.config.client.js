@@ -54,7 +54,7 @@ if (isDev) {
                 }
             ]
         },
-        devtool: '#cheap-module-eval-source-map',
+        devtool: '#cheap-module-eval-source-map', //在测试环境下显示原来的代码
         devServer,
         plugins: defaultPluins.concat([
             new webpack.HotModuleReplacementPlugin(),

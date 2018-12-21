@@ -2,9 +2,10 @@ import Vue from 'vue'
 import Component from './func-notification'
 
 const NotificationConstructor = Vue.extend(Component); //extend使我们可以通过new方法创建一个组件（参数为对象）
+
 var instances = []; // 当多个notify一起出现时，确定定位
 var seed = 1; // 决定id
-var h = 16;
+//从多个notify中删除指定id
 var removeInstance = (instance) => {
     if (!instance) return;
     var index = instances.findIndex(inst => {
@@ -18,9 +19,9 @@ var removeInstance = (instance) => {
         instances[i].verticalOffset = parseInt(instances[i].verticalOffset - removeHeight)
     }
 }
-
+// 其实有些东西可以写在mounted里
 const notify = (options) => {
-    var {autoClose, ...rest} = options;
+    var {autoClose, ...rest} = options; // 将options解耦，分为autoClose和剩下的属性。
     const instance = new NotificationConstructor({
         propsData: {
             ...rest
@@ -31,7 +32,7 @@ const notify = (options) => {
     }); //instance是实例对象
     var id = `notification_${seed++}`;
     instance.id = id; //给实例加上id属性
-    instance.vm = instance.$mount(); //不传属性，生成了一个dom节点
+    instance.vm = instance.$mount(); //不传属性，生成了一个dom节点$el
     document.body.appendChild(instance.vm.$el); //再通过appendchild放在body下
     instance.visible = true;
     var verticalOffset = 0; //实例相对于底部的距离

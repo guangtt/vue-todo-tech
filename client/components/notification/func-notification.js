@@ -1,7 +1,8 @@
 import Notification from './notification.vue'
 
+//对于notification组件的额外属性，用于动态创建notification组件
 export default {
-    extends: Notification,
+    extends: Notification, //extends,继承父组件（相当于复制粘贴）
     computed: {
         style() {
             return {
@@ -39,6 +40,7 @@ export default {
             this.height = this.$el.offsetHeight;
         }
     },
+    // 销毁组件前销毁计时器
     beforeDestroy() {
         this.clearTimer();
     }

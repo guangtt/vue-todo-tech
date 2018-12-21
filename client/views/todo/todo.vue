@@ -1,5 +1,19 @@
 <template>
     <section class="real-app">
+        <div class="tab-container">
+            <tabs :value="tabValue" @change="handleChange">
+                <tab label="tab1" index="1">
+                    <span>tab content 2</span>
+                </tab>
+                <tab index="2">
+                    <span slot="label">tab2</span>
+                    <span>tab content 3</span>
+                </tab>
+                <tab label="tab3" index="3">
+                    <span>tab content 4</span>
+                </tab>
+            </tabs>
+        </div>
         <input
                 type="text"
                 class="add-input"
@@ -13,7 +27,7 @@
                 :key="todo.id"
                 @del="deleteTodo"
         />
-        <tabs
+        <helper
                 :filter="filter"
                 :todos="todos"
                 @toggle="toggleFilter"
@@ -25,20 +39,24 @@
 
 <script>
     import Item from './item.vue'
-    import Tabs from './tabs.vue'
+    import Helper from './tabs.vue'
 
     let id = 0
     export default {
         data() {
             return {
                 todos: [],
-                filter: 'all'
+                filter: 'all',
+                tabValue: '1'
             }
+        },
+        mounted() {
+
         },
         props: ['id'],
         components: {
             Item,
-            Tabs,
+            Helper,
         },
         // 导航守卫拿不到this，也就是vue实例，要通过next函数拿取
         // 只有enter不能访问this，因为还没进来，组件还没完全被创建，所以有一个特定的回调函数和参数vm
@@ -88,6 +106,9 @@
             },
             clearAllCompleted() {
                 this.todos = this.todos.filter(todo => !todo.completed)
+            },
+            handleChange(index) {
+                this.tabValue = index;
             }
         }
     }
@@ -119,6 +140,10 @@
         padding: 16px 16px 16px 60px;
         border: none;
         box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
+    }
+    .tab-container{
+        background-color: #fff;
+        padding: 0 15px;
     }
 </style>
 

@@ -26,6 +26,7 @@
             }
         },
         computed: {
+            //!
             style() {
                 return {}
             }
@@ -38,12 +39,15 @@
             afterLeave() {
                 this.$emit('closed');
             },
+            //!
             afterEnter() {
 
             },
+            //!
             clearTimer() {
 
             },
+            //!
             createTimer() {
 
             }

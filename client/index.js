@@ -8,8 +8,9 @@ import createRouter from './config/router'
 import createStore from './store/store'
 // 引入全局注册notification的index.js，就可以在全局使用
 import Notification from './components/notification/index'
-Vue.use(Notification);
-
+Vue.use(Notification); //因为export的是一个函数，所以需要用use调用
+import Tabs from './components/tabs/index'
+Vue.use(Tabs);
 Vue.use(Vuex);
 Vue.use(VueRouter); //让全局都能用到VueRouter
 var router = createRouter();
