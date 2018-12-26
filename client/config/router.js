@@ -4,7 +4,7 @@ import routes from './routes';
 export default () => {
     return new Router({
         routes,
-        // mode: 'history',
+        mode: 'history',
         // base: '/base/',
         // linkActiveClass: 'active-link', //部分匹配就会加上的class
         // linkExactActiveClass: 'exact-active-link' //完全匹配的时候才会加上的lcass
