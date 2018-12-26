@@ -2,31 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2caadd26-d05d-4493-a49c-28acbdbf9845" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.babelrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/template.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/vue-loader.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/webpack.config.base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/webpack.config.client.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/webpack.config.practice.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/components/define.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/components/extend.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/components/features.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/components/render.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/components/v-model.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/computed/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/data-binding/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/directive/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/instance/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/practice/lifecycle/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -92,7 +68,7 @@
           <entry key="babelrc" value="45" />
           <entry key="config" value="66" />
           <entry key="eslintrc" value="55" />
-          <entry key="gitignore" value="67" />
+          <entry key="gitignore" value="86" />
           <entry key="html" value="31" />
           <entry key="js" value="15045" />
           <entry key="json" value="266" />
@@ -108,7 +84,7 @@
           <entry key="JSON" value="366" />
           <entry key="JSX Harmony" value="45" />
           <entry key="JavaScript" value="14986" />
-          <entry key="PLAIN_TEXT" value="138" />
+          <entry key="PLAIN_TEXT" value="157" />
           <entry key="Stylus" value="105" />
           <entry key="Vue.js" value="4754" />
         </counts>
@@ -134,8 +110,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="26">
-              <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+            <state relative-caret-position="52">
+              <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -230,7 +206,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="334" />
     <option name="y" value="35" />
     <option name="width" value="1400" />
@@ -342,12 +318,12 @@
       <workItem from="1545616520156" duration="15000" />
       <workItem from="1545640802463" duration="273000" />
       <workItem from="1545702332960" duration="3496000" />
-      <workItem from="1545804054142" duration="5558000" />
+      <workItem from="1545804054142" duration="5803000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113107000" />
+    <option name="totallyTimeSpent" value="113352000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -736,8 +712,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="1" column="6" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+        <state relative-caret-position="52">
+          <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
         </state>
       </provider>
     </entry>
