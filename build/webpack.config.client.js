@@ -36,6 +36,10 @@ const defaultPluins = [
 if (isDev) {
     //用merge函数把两个config配置对象融合
     config = merge(baseConfig, {
+        output: {
+            // 表示在引入静态资源时，从根路径开始引入
+            publicPath: '/'
+        },
         module: {
             rules: [
                 {

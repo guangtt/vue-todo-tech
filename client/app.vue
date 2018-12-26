@@ -4,15 +4,13 @@
         <Header></Header>
         <!--<p>{{counter}}</p>-->
         <!--<p>{{fullName}}</p>-->
-        <!--<router-link to="/app">app</router-link>-->
-        <!--<router-link to="/app/test">app/test</router-link>-->
-        <!--<router-link to="/login">login</router-link>-->
-        <!--<router-link to="/login/exact">login exact</router-link>-->
+        <router-link to="/app">app</router-link>
+        <router-link to="/app/test">app/test</router-link>
+        <router-link to="/login">login</router-link>
         <!--<todo></todo>-->
         <transition name="fade">
             <router-view></router-view>
         </transition>
-        <router-view name="a"></router-view>
         <Footer></Footer>
     </div>
 </template>
