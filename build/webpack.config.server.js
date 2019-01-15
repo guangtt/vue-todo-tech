@@ -1,11 +1,11 @@
-/*webpack根据是否是开发环境来配置*/
+/*server端的webpack打包配置*/
 
 const path = require('path')
 const webpack = require('webpack')
 const merge = require('webpack-merge'); //把两个webpack配置文件融合
 const baseConfig = require('./webpack.config.base') //引入config基础配置
 const ExtractPlugin = require('extract-text-webpack-plugin');
-const VueServerPlugin = require('vue-server-renderer/server-plugin') //打包输出json文件，vue提供的有关ssr的插件
+const VueServerPlugin = require('vue-server-renderer/server-plugin') //vue提供的有关ssr的插件，打包输出json文件
 
 
 let config;
@@ -18,12 +18,12 @@ config = merge(baseConfig, {
         filename: 'server-entry.js',
         path: path.join(__dirname, '../server-build')
     },
-    externals: Object.keys(require('../package.json').dependencies), // 不去打包这一部分文件
+    externals: Object.keys(require('../package.json').dependencies), // 在node端运行可以直接require，所以不去打包这一部分文件
     module: {
         rules: [
             {
                 test: /\.styl/,
-                use: ExtractPlugin.extract({
+                use: ExtractPlugin.extract({  //node没有dom的执行环境，需要单独打包
                     fallback: 'vue-style-loader',
                     use: [
                         'css-loader',
@@ -42,7 +42,7 @@ config = merge(baseConfig, {
     devtool: 'source-map',
     plugins: [
         new ExtractPlugin('styles.[Hash:8].css'),
-        new webpack.DefinePlugin({
+        new webpack.DefinePlugin({ // 在全局内都能引用变量
             'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development'),
             'process.env.VUE_ENV': '"server"'
         }),

@@ -5,6 +5,7 @@ const HTMLPlugin = require('html-webpack-plugin'); //打包出一个html文件�
 const webpack = require('webpack')
 const merge = require('webpack-merge'); //把两个webpack配置文件融合
 const ExtractPlugin = require('extract-text-webpack-plugin')
+const VueClientPlugin = require('vue-server-renderer/client-plugin')
 
 const baseConfig = require('./webpack.config.base') //引入config基础配置
 const isDev = process.env.NODE_ENV === 'development'
@@ -30,7 +31,8 @@ const defaultPluins = [
     }),
     new HTMLPlugin({
         template: path.join(__dirname, 'template.html') //为生成的html文件设置模板
-    })
+    }),
+    new VueClientPlugin()
 ];
 
 if (isDev) {
