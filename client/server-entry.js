@@ -1,3 +1,5 @@
+// ssr
+
 import {createApp} from './create-app'
 
 export default context => {

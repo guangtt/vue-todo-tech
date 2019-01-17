@@ -9,7 +9,7 @@
     "build": "npm run clean && npm run build:client",
     "clean": "rimraf dist",
     "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
-    "dev:server": "cross-env NODE_ENV=development node server/server.js",
+    "dev:server": "cross-env NODE_ENV=development supervisor server/server.js",
     "practice": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.practice.js"
   },
   "author": "",
@@ -17,6 +17,8 @@
   "dependencies": {
     "axios": "^0.18.0",
     "ejs": "^2.6.1",
+    "koa-body": "^4.0.6",
+    "sha1": "^1.1.1",
     "vue-router": "^3.0.2",
     "vue-server-renderer": "^2.5.13",
     "vuex": "^3.0.1"
