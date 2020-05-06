@@ -1,5 +1,6 @@
 # About
-这是慕课网上[Vue+Webpack打造todo应用](https://www.imooc.com/learn/935)课程的源码
+这是慕课网上[Vue核心技术
+Vue+Vue-Router+Vuex+SSR实战精讲](https://coding.imooc.com/class/196.html)课程的源码
 
 # 使用方法
 ```
